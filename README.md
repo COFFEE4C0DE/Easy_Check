@@ -42,6 +42,8 @@ Os arquivos gerados ficam em `dist/`.
 
 O projeto possui `vercel.json` com fallback para aplicações SPA. Assim, as rotas `/agenda` e `/offline` continuam funcionando quando abertas diretamente ou após atualizar a página.
 
+Deploy atual: [easy-check-black.vercel.app](https://easy-check-black.vercel.app/)
+
 Para publicar pelo GitHub:
 
 1. Importe o repositório no painel do Vercel.
