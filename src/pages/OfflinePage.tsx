@@ -18,7 +18,7 @@ export function OfflinePage() {
 
       <section className="mt-2" aria-labelledby="saved-content-title">
         <SectionHeader id="saved-content-title" title="Informações salvas" />
-        <div className="space-y-2.5">
+        <div className="space-y-2">
           {savedContent.map((item) => (
             <OfflineCategoryCard key={item.id} {...item} />
           ))}

@@ -98,7 +98,7 @@ export function SyncStatus() {
         {buttonContent[visibleSyncState]}
       </button>
 
-      <div className="min-h-16" aria-live="polite">
+      <div aria-live="polite">
         {visibleSyncState === 'offline' && (
           <div
             role="status"

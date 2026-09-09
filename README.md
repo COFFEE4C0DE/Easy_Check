@@ -1,32 +1,86 @@
-# React + TypeScript + Vite
+# Easy Check
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Protótipo visual mobile-first que centraliza as principais informações acadêmicas de um estudante e demonstra como elas continuam disponíveis mesmo sem conexão.
 
-Currently, two official plugins are available:
+O projeto foi criado para uma apresentação universitária sobre Business Agility e Scrum e representa duas histórias do MVP:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- visualizar informações acadêmicas importantes em uma única interface;
+- consultar dados previamente sincronizados durante uma simulação offline.
 
-## React Compiler
+O Easy Check é exclusivamente front-end. Não há backend, autenticação, banco de dados, APIs ou armazenamento offline real.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the Oxlint configuration
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+- React Router
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Como executar
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+Requisitos: Node.js e npm instalados.
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Abra o endereço local informado pelo Vite no terminal.
+
+Para validar e gerar a versão de produção:
+
+```bash
+npm run lint
+npm run build
+```
+
+Os arquivos gerados ficam em `dist/`.
+
+## Telas
+
+### Dashboard — `/`
+
+Centraliza saudação, próxima aula, atividades, prova, avisos e prazos. É a tela principal da demonstração da US01.
+
+### Agenda — `/agenda`
+
+Exibe uma linha do tempo simples com os próximos compromissos acadêmicos. A tela existe para manter a navegação completa sem ampliar o escopo do MVP.
+
+### Conteúdo offline — `/offline`
+
+Mostra o status da disponibilidade local, a última sincronização, as categorias salvas e o botão de sincronização. É a tela principal da demonstração da US02.
+
+## Modo demo Online/Offline
+
+O controle de conexão fica no cabeçalho, ao lado do avatar `DA`.
+
+1. Clique no indicador `Online` ou `Offline`.
+2. Selecione o estado que deseja simular.
+3. No modo Offline, o banner `Sem conexão` aparece, mas todas as informações permanecem acessíveis.
+
+Na rota `/offline`, o botão `Sincronizar agora` demonstra dois comportamentos:
+
+- Online: mostra `Sincronizando...` e depois `Atualizado agora`;
+- Offline: informa que a sincronização ocorrerá quando a conexão for restabelecida.
+
+O estado é controlado somente em memória pelo React e reinicia ao recarregar a página.
+
+## Dados mockados
+
+Todos os dados usados na interface estão centralizados em:
+
+```text
+src/data/mockData.ts
+```
+
+Edite esse arquivo para alterar o estudante, aula, atividades, prova, aviso, última sincronização e totais de conteúdo salvo.
+
+## Roteiro para screenshots
+
+- Dashboard online: acesse `/` e selecione `Online`.
+- Conteúdo offline: acesse `/offline` com o modo `Online` para destacar os dados salvos e a sincronização.
+- Dashboard offline: acesse `/`, abra o controle de conexão e selecione `Offline`.
+
+O layout tem referência principal de 390 × 844 px e permanece centralizado, com largura máxima de 460 px, em telas maiores.
