@@ -38,6 +38,28 @@ npm run build
 
 Os arquivos gerados ficam em `dist/`.
 
+## Deploy no Vercel
+
+O projeto possui `vercel.json` com fallback para aplicações SPA. Assim, as rotas `/agenda` e `/offline` continuam funcionando quando abertas diretamente ou após atualizar a página.
+
+Para publicar pelo GitHub:
+
+1. Importe o repositório no painel do Vercel.
+2. Mantenha o preset `Vite` detectado automaticamente.
+3. Use `npm run build` como comando de build e `dist` como diretório de saída.
+4. Faça o deploy. Novos pushes na branch principal poderão gerar deploys automaticamente.
+
+Para publicar pela CLI:
+
+```bash
+# Faça login e vincule o diretório na primeira execução
+npx vercel login
+npx vercel link
+
+# Publique em produção
+npx vercel --prod
+```
+
 ## Telas
 
 ### Dashboard — `/`
