@@ -1,12 +1,13 @@
 import { Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { student } from '../../data/mockData'
 import { ConnectionToggle } from '../demo/ConnectionToggle'
 
 export function Header() {
   return (
     <header className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4">
-      <a
-        href="/"
+      <Link
+        to="/"
         className="flex items-center gap-2 rounded-lg text-lg font-bold tracking-[-0.035em] text-ink"
         aria-label="Easy Check — Início"
       >
@@ -20,7 +21,7 @@ export function Header() {
           />
         </span>
         Easy Check
-      </a>
+      </Link>
 
       <div className="flex items-center gap-2.5">
         <ConnectionToggle />

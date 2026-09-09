@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ActivityCard } from '../components/dashboard/ActivityCard'
 import { ExamCard } from '../components/dashboard/ExamCard'
 import { Greeting } from '../components/dashboard/Greeting'
@@ -15,13 +16,14 @@ export function DashboardPage() {
       <section className="mt-7" aria-labelledby="activities-title">
         <SectionHeader
           title="Próximas atividades"
+          id="activities-title"
           action={
-            <button
-              type="button"
-              className="min-h-10 rounded-lg px-1 text-[13px] font-bold text-sky-700 transition hover:text-sky-900"
+            <Link
+              to="/agenda"
+              className="flex min-h-10 items-center rounded-lg px-1 text-[13px] font-bold text-sky-700 transition hover:text-sky-900"
             >
               Ver todas
-            </button>
+            </Link>
           }
         />
         <div className="space-y-2.5">
@@ -32,12 +34,12 @@ export function DashboardPage() {
       </section>
 
       <section className="mt-7" aria-labelledby="exam-title">
-        <SectionHeader title="Prova" />
+        <SectionHeader id="exam-title" title="Prova" />
         <ExamCard />
       </section>
 
       <section className="mt-7" aria-labelledby="notices-title">
-        <SectionHeader title="Avisos" />
+        <SectionHeader id="notices-title" title="Avisos" />
         <NoticeCard />
       </section>
     </div>

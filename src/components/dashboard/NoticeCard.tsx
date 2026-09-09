@@ -12,7 +12,7 @@ export function NoticeCard() {
         <p className="mt-1 text-[13px] leading-5 text-muted">
           {notice.description}
         </p>
-        <p className="mt-2 text-xs font-semibold text-slate-400">{notice.time}</p>
+        <p className="mt-2 text-xs font-semibold text-slate-500">{notice.time}</p>
       </div>
     </article>
   )

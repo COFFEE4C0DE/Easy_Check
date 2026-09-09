@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AppShell } from './components/layout/AppShell'
-import { ConnectionProvider } from './context/ConnectionContext'
+import { ConnectionProvider } from './context/ConnectionProvider'
 import { AgendaPage } from './pages/AgendaPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { OfflinePage } from './pages/OfflinePage'
